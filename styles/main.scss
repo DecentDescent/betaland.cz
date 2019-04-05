@@ -1,0 +1,68 @@
+@import 'variables';
+
+body {
+    margin: 0;
+    background: #070606;
+    overflow: hidden;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.hero {
+    width: 50%;
+    background: black;
+    position: relative;
+    background: #070606;
+    background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/743f7b68865467.5b6c0893079cd.gif');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .logo {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 24px;
+        width: 64px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        svg {
+            width: 64px;
+            fill: #404a4a;
+        }
+    }
+
+    .navToggle {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: 24px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #404a4a;
+        left: 50%;
+        opacity: 1;
+        transform: translateX(-50%);
+        transition: opacity 0.5s;
+        cursor: pointer;
+
+        svg {
+            width: 24px;
+            height: 24px;
+            fill: #070606;
+        }
+    }
+}
+
+.content {
+    width: 50%;
+    background: #fff;
+}

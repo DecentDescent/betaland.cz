@@ -1,0 +1,17 @@
+{
+  "name": "betaland.cz",
+  "version": "1.0.0",
+  "description": "New Personal Blog",
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "next": "^8.0.3",
+    "node-sass": "^4.11.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  }
+}
