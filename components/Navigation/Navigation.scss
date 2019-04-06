@@ -1,0 +1,242 @@
+@import '../../styles/variables';
+
+@keyframes navOpenLeft {
+    0% {
+        transform: translateX(-50vw);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes navOpenRight {
+    0% {
+        transform: translateX(50vw);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.navigation {
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/743f7b68865467.5b6c0893079cd.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: fadeIn 0.5s forwards;
+    margin: auto;
+    z-index: 2;
+
+    &.navigation--active {
+        display: flex;
+    }
+
+    article.navigation__quote {
+        transform: translateX(50vw);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50vw;
+        height: 100vh;
+        padding: 0px;
+        box-sizing: border-box;
+        background: rgba(#2e4756, 0.95);
+        animation: navOpenRight 0.5s forwards;
+        z-index: 1;
+
+        blockquote {
+            margin: 0;
+            padding: 0;
+            max-width: 300px;
+
+            p {
+                font-size: 18px;
+                line-height: 1.5;
+                font-style: italic;
+                text-align: left;
+                color: #fff;
+                font-family: 'PT Serif', serif;
+                font-weight: 300;
+            }
+
+            cite {
+                display: block;
+                margin: 0;
+                padding: 0;
+                font-size: 12px;
+                letter-spacing: 1px;
+                opacity: 0.6;
+                text-transform: uppercase;
+                text-align: right;
+                color: #fff;
+                font-family: 'Gyre Adventor', sans-serif;
+                font-style: normal;
+                font-weight: 700;
+            }
+        }
+
+        @media (max-width: 980px) {
+            display: none;
+        }
+    }
+    .navigation__container {
+        height: 100vh;
+        min-height: 100vh;
+        width: 50vw;
+        padding: 32px 0;
+        box-sizing: border-box;
+        overflow: auto;
+        display: flex;
+        background: $color-brand;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        transform: translateX(-50vw);
+        animation: navOpenLeft 0.5s forwards;
+        z-index: 2;
+
+        @media (max-width: 980px) {
+            width: 100vw;
+        }
+
+        nav.navigation__menu {
+            padding: 32px 0;
+            height: auto;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            overflow: none;
+            margin: auto;
+
+            .logo,
+            .close {
+                cursor: pointer;
+            }
+            svg {
+                flex-shrink: 0;
+                transition: fill 0.35s;
+            }
+
+            .logo {
+                svg {
+                    width: 64;
+                    height: 64px;
+                    fill: #fff;
+                    flex-shrink: 0;
+                    transition: fill 0.35s;
+                }
+
+                &:hover {
+                    svg {
+                        fill: #e63946;
+                    }
+                }
+            }
+
+            .close {
+                svg {
+                    width: 42;
+                    height: 42px;
+                    stroke: #fff;
+                    flex-shrink: 0;
+                    fill: none;
+                    transition: stroke 0.35s;
+                }
+
+                &:hover {
+                    svg {
+                        stroke: #e63946;
+                    }
+                }
+            }
+
+            ul {
+                padding: 0;
+                margin: O;
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                flex-shrink: 0;
+
+                li {
+                    width: 100%;
+                    display: block;
+                    text-align: center;
+                    cursor: pointer;
+
+                    a {
+                        display: inline-block;
+                        font-family: 'Gyre Adventor', sans-serif;
+                        color: #fff;
+                        font-size: 32px;
+                        font-weight: 400;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        text-align: center;
+                        letter-spacing: 10px;
+                        padding: 24px;
+                        position: relative;
+                        &:before,
+                        &:after {
+                            content: '';
+                            width: 0%;
+                            height: 3px;
+                            background: #fff;
+                            position: absolute;
+                            top: calc(50% + 2px);
+                            transition: width 0.3s, background 0.1s 0.1s;
+                        }
+
+                        &:before {
+                            left: 50%;
+                        }
+
+                        &:after {
+                            right: 50%;
+                        }
+
+                        @media (max-width: 980px) {
+                            font-size: 24px;
+                        }
+                    }
+
+                    &:hover {
+                        a {
+                            color: #e63946;
+                        }
+                        a:before,
+                        a:after {
+                            background: #e63946;
+                            opacity: 1;
+                            width: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

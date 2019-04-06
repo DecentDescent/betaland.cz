@@ -1,2 +1,9 @@
 $color-black: #000;
 $color-white: #fff;
+$color-brand: rgba(#16262e, 0.9);
+@import url('https://fonts.googleapis.com/css?family=PT+Serif:300,400,700i&subset=latin-ext');
+
+@font-face {
+    font-family: 'Gyre Adventor';
+    src: url('/static/fonts/texgyreadventor-bold.woff') format('woff');
+}

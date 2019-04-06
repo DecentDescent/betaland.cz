@@ -1,0 +1,82 @@
+@import '../../styles/variables';
+
+.article {
+    overflow: auto;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    z-index: 0;
+    top: 0;
+    left: 0;
+
+    &.article--inactive {
+        overflow: hidden;
+    }
+
+    .article__hero {
+        width: 50vw;
+        height: 100vh;
+        background: #010202;
+        overflow: hidden;
+        z-index: 2;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/743f7b68865467.5b6c0893079cd.gif');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .article__container {
+        width: 50vw;
+        height: 100vh;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+        z-index: 0;
+        padding: 48px 48px 48px 48px;
+        box-sizing: border-box;
+        .article__content {
+            max-width: 550px;
+            height: auto;
+            margin: 0 auto;
+
+            .article__nav {
+                display: flex;
+                width: 100%;
+                padding: 0 48px;
+                box-sizing: border-box;
+                justify-content: center;
+
+                a {
+                    display: inline-flex;
+                    width: 33%;
+                    align-items: center;
+                    justify-content: center;
+                    text-decoration: none;
+                    color: $color-brand;
+                    letter-spacing: 2px;
+                    opacity: 0.7;
+                    transition: opacity 0.25s;
+                    svg {
+                        width: 48px;
+                        height: 48px;
+                    }
+
+                    span {
+                        font-size: 13px;
+                        text-transform: uppercase;
+                        font-family: 'Gyre Adventor', sans-serif;
+                    }
+
+                    &:hover {
+                        opacity: 1;
+                    }
+
+                    &.disabled {
+                        opacity: 0.1;
+                    }
+                }
+            }
+        }
+    }
+}

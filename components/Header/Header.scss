@@ -1,0 +1,24 @@
+@import '../../styles/variables';
+.header {
+    width: 50vw;
+    padding: 24px;
+    box-sizing: border-box;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+
+    .logo {
+        svg {
+            width: 64;
+            height: 64px;
+            fill: #fff;
+            flex-shrink: 0;
+            transition: fill 0.35s;
+        }
+    }
+    @media (max-width: 980px) {
+        width: 100vw;
+    }
+}
