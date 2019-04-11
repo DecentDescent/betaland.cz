@@ -1,0 +1,45 @@
+@import '../../styles/variables';
+
+.about {
+    overflow: auto;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    z-index: 0;
+    top: 0;
+    left: 0;
+
+    &.about--inactive {
+        overflow: hidden;
+    }
+
+    .about__hero {
+        width: 50vw;
+        height: 100vh;
+        background: #010202;
+        overflow: hidden;
+        z-index: 2;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/743f7b68865467.5b6c0893079cd.gif');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .about__container {
+        width: 50vw;
+        height: 100vh;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+        z-index: 0;
+        padding: 48px 48px 48px 48px;
+        box-sizing: border-box;
+        .about__content {
+            max-width: 550px;
+            height: auto;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+}

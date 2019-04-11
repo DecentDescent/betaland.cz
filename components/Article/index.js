@@ -1,32 +1,31 @@
 import classNames from 'classnames';
 import styles from './Article.scss';
 import Link from 'next/link';
-import posts from '../../static/posts.js';
 
-export default props => (
-    <section
-        className={classNames({
-            [styles.article]: true,
-            [styles['article--inactive']]: props.scrollOff,
-        })}
-    >
-        <div className={styles.article__hero} />
-        <article className={styles.article__container}>
-            <div className={styles.article__content}>
-                {props.currentPost.content.title}
-                {props.currentPost.content.dedication}
-                {props.currentPost.content.text}
-                <hr />
-                <h3>
-                    Moodsong
-                    <br />
-                    <Link>
-                        <a>{props.currentPost.content.moodsong}</a>
-                    </Link>
-                </h3>
-                <hr />
-                <div className={styles.article__nav}>
-                    <Link href="#">
+export default props => {
+    const post = props.post;
+
+    return (
+        <section
+            className={classNames({
+                [styles.article]: true,
+                [styles['article--inactive']]: props.scrollOff,
+            })}
+        >
+            <div className={styles.article__hero} />
+            <article className={styles.article__container}>
+                <div className={styles.article__content}>
+                    <h1>Headline</h1>
+                    <h2>Dedications</h2>
+                    <p>Content</p>
+                    <hr />
+                    <h3>
+                        Moodsong:
+                        <br />
+                        <a>Song</a>
+                    </h3>
+                    <hr />
+                    <div className={styles.article__nav}>
                         <a>
                             <svg viewBox="0 0 64 64">
                                 <g
@@ -39,7 +38,7 @@ export default props => (
                                     <g
                                         transform="translate(32.500000, 32.000000) rotate(-180.000000) translate(-32.500000, -32.000000) translate(15.000000, 15.000000)"
                                         stroke="#000000"
-                                        stroke-width="2"
+                                        strokeWidth="2"
                                     >
                                         <path
                                             d="M5,5 L29,29"
@@ -58,13 +57,9 @@ export default props => (
                             </svg>
                             <span>Předchozí</span>
                         </a>
-                    </Link>
-                    <Link href="#">
                         <a>
                             <span>Archív</span>
                         </a>
-                    </Link>
-                    <Link href="#">
                         <a className={styles.disabled}>
                             <span>Další</span>
                             <svg viewBox="0 0 64 64">
@@ -96,9 +91,9 @@ export default props => (
                                 </g>
                             </svg>
                         </a>
-                    </Link>
+                    </div>
                 </div>
-            </div>
-        </article>
-    </section>
-);
+            </article>
+        </section>
+    );
+};

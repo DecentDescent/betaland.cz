@@ -1,37 +1,24 @@
 import React, {useState} from 'react';
-import Link from 'next/link';
 import Head from '../Head';
 import Navigation from '../Navigation';
 import Header from '../Header';
 import Footer from '../Footer';
 import Article from '../Article';
-import quotes from '../../static/quotes.js';
-import posts from '../../static/posts.js';
+import About from '../About';
 import styles from './Page.scss';
 
-function Page() {
+export default props => {
     const [nav, setNav] = useState(false);
-    const [quote, setQuote] = useState(quotes[Math.floor(Math.random() * quotes.length)]);
-    const [post, setPost] = useState(posts[0]);
     return (
         <div>
             <Head />
             <Header />
-            <Navigation
-                opened={nav}
-                quote={quote.content}
-                quoteAuthor={quote.author}
-                onClose={() => setNav(false)}
-                activePage={'index'}
-            />
-            <Footer
-                toggleAction={() => (
-                    setNav(!nav), setQuote(quotes[Math.floor(Math.random() * quotes.length)])
-                )}
-            />
-            <Article currentPost={post} scrollOff={nav} />
+            {nav ? <Navigation onClose={() => setNav(false)} /> : null}
+            <Footer toggleAction={() => setNav(true)} />
+            {props.type === 'article' ? (
+                <Article scrollOff={props.scrollOff} scrollOff={nav} />
+            ) : null}
+            {props.type === 'about' ? <About scrollOff={props.scrollOff} scrollOff={nav} /> : null}
         </div>
     );
-}
-
-export default Page;
+};

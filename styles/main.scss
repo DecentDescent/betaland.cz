@@ -27,6 +27,7 @@ h2 {
     display: block;
     margin: 0 auto;
     opacity: 0.5;
+    padding: 0px;
 }
 
 h3 {
@@ -35,16 +36,26 @@ h3 {
     font-family: 'Gyre Adventor';
     text-transform: uppercase;
     letter-spacing: 3px;
+    padding: 0px;
+    margin: 0 auto;
 }
 
 p {
-    font-size: 20px;
+    font-size: 18px;
     font-family: 'PT Serif', serif;
-    line-height: 1.6;
+    line-height: 1.5;
     font-weight: 400;
-    margin: 48px auto;
+    margin: 24px auto;
     color: $color-brand;
     max-width: 40ch;
+}
+
+small {
+    text-align: center;
+    font-size: 10px;
+    font-family: 'Gyre Adventor';
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 hr {

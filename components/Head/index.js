@@ -3,7 +3,7 @@ import Head from 'next/head';
 export default ({title, description, ogImage}) => (
     <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{title || 'Betaland'}</title>
+        <title>{title || 'Beta Land'}</title>
         <meta
             name="description"
             content={
@@ -11,7 +11,7 @@ export default ({title, description, ogImage}) => (
                 'Greetings, fellow traveler! Looking for a flight ticket to Europe? You’re on the right place. We are JetCheater and we are travel hackers. We will find you the cheapest tickets available!'
             }
         />
-        <meta property="og:title" content={title || 'Betaland'} />
+        <meta property="og:title" content={title || 'Beta Land'} />
         <meta
             property="og:description"
             content={
@@ -20,8 +20,8 @@ export default ({title, description, ogImage}) => (
             }
         />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@msf_czech" />
-        <meta name="twitter:creator" content="@msf_czech" />
+        <meta name="twitter:site" content="@BetaLand" />
+        <meta name="twitter:creator" content="@BetaLand" />
         <meta name="og:url" content="https://www.betaland.cz" />
 
         <link

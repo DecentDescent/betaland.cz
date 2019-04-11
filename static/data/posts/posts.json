@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "slug": "uwaga-uwaga-pepiki-na-horyzoncie",
+        "content": {
+            "title": "<h1>První záznam</h1>",
+            "dedication": "<h2>Aleksandře</h2>",
+            "text": "text"
+        },
+        "moodsong": "Betaland — Kraków",
+        "author": "Somebody"
+    },
+    {
+        "id": 2,
+        "slug": "uwaga-uwaga-pepiki-na-horyzoncie",
+        "content": {
+            "title": "Druhý záznam",
+            "dedication": "<h2>Aleksandře</h2>",
+            "text": "text"
+        },
+        "moodsong": "Betaland — Kraków",
+        "author": "Somebody"
+    },
+    {
+        "id": 3,
+        "slug": "uwaga-uwaga-pepiki-na-horyzoncie",
+        "content": {
+            "title": "Třetí záznam",
+            "dedication": "<h2>Aleksandře</h2>",
+            "text": "text"
+        },
+        "moodsong": "Betaland — Kraków",
+        "author": "Somebody"
+    }
+]

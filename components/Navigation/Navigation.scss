@@ -35,22 +35,17 @@
     height: 100vh;
     min-height: 100vh;
     position: fixed;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     top: 0;
     left: 0;
-    background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/743f7b68865467.5b6c0893079cd.gif');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     animation: fadeIn 0.5s forwards;
     margin: auto;
     z-index: 2;
-
-    &.navigation--active {
-        display: flex;
-    }
 
     article.navigation__quote {
         transform: translateX(50vw);
